@@ -12,7 +12,7 @@ function User({account}) {
   useEffect(() => {
 
     async function fetchRentals() {
-      const Rentals = Moralis.Object.extend("newBookings");
+      const Rentals = Moralis.Object.extend("Bookings");
       const query = new Moralis.Query(Rentals);
       query.equalTo("booker", account);
       const result = await query.find();
@@ -23,7 +23,6 @@ function User({account}) {
     fetchRentals();
 
   }, [isVisible]);
-
 
   return (
     <>
@@ -38,29 +37,29 @@ function User({account}) {
         isVisible={isVisible}
       >
         <div style={{display:"flex", justifyContent:"start", flexWrap:"wrap", gap:"10px"}}>
-         {userRentals &&
-          userRentals.map((e)=>{
-            return(
-              <div style={{ width: "200px" }}>
-                <Card
-                  isDisabled
-                  title={e.attributes.city}
-                  description={`${e.attributes.datesBooked[0]} for ${e.attributes.datesBooked.length} Days`}
-                >
-                  <div>
-                    <img
-                      width="180px"
-                      src={e.attributes.imgUrl}
-                    />
-                  </div>
-                </Card>
-              </div>
-            )
-          })
-
-         }
+          {
+            userRentals &&
+            userRentals.map((e) => {
+              return(
+                <div style={{ width: "200px" }}>
+                  <Card
+                    isDisabled
+                    title={e.attributes.city}
+                    description={`${e.attributes.datesBooked[0]} for ${e.attributes.datesBooked.length} Days`}
+                  >
+                    <div>
+                      <img
+                        width="180px"
+                        src={e.attributes.imgUrl}
+                      />
+                    </div>
+                  </Card>
+                </div>
+              )
+            })
+          }
         </div>
-        
+
       </Modal>
     </>
   );
