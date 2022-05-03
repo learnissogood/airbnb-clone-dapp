@@ -1,8 +1,8 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import bg from "../images/frontpagebg.png";
-import logo from "../images/airbnb.png";
+import bg from "../images/frontpagebg2.png";
+import logo from "../images/airbnbRed.png";
 import { ConnectButton, Icon, Select, DatePicker, Input, Button } from "web3uikit";
 import { useState } from "react";
 

@@ -5,7 +5,7 @@ import {useMoralis} from "react-moralis";
 
 function User({account}) {
 
-  const [isVisible, setVisible] =useState(false);
+  const [isVisible, setVisible] = useState(false);
   const { Moralis } = useMoralis();
   const [userRentals, setUserRentals] = useState();
 

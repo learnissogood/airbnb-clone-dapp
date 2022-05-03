@@ -79,7 +79,7 @@ const Rentals = () => {
     }
 
     let options = {
-      contractAddress: "0xa9110224Df672c266569931F4e03f009651149E6",
+      contractAddress: "0x41d88375e88bd5600A7A7A4B24Ee46cbA324e98c",
       functionName: "addDatesBooked",
       abi: [
         {
@@ -159,7 +159,7 @@ const Rentals = () => {
         <div className="lrContainers">
           {account &&
           <User account={account} />
-        }
+          }
           <ConnectButton />
         </div>
       </div>
