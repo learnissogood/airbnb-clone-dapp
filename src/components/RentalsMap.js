@@ -1,6 +1,7 @@
 import React from "react";
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import { useState, useEffect } from "react";
+require('dotenv').config();
 
 function RentalsMap({ locations, google, setHighLight }) {
   const [center, setCenter] = useState();
@@ -39,5 +40,5 @@ function RentalsMap({ locations, google, setHighLight }) {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyD8HBHtaZDREk5_tIHyL1PPVWUYlS7M0to",
+  apiKey: process.env.GOOGLE_MAP_API_KEY,
 })(RentalsMap);
