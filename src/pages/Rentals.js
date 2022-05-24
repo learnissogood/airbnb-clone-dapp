@@ -10,6 +10,7 @@ import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import User from "../components/User";
 
 const Rentals = () => {
+
   const { state: searchFilters } = useLocation();
   const [highLight, setHighLight] = useState();
   const { Moralis, account } = useMoralis();
@@ -65,7 +66,7 @@ const Rentals = () => {
     }
 
     fetchRentalsList();
-  }, [searchFilters]);
+  }, [searchFilters, Moralis]);
 
 
   const bookRental = async function (start, end, id, dayPrice) {
@@ -173,8 +174,8 @@ const Rentals = () => {
               return (
                 <>
                   <hr className="line2" />
-                  <div className={highLight == i ? "rentalDivH " : "rentalDiv"}>
-                    <img className="rentalImg" src={e.attributes.imgUrl}></img>
+                  <div className={highLight === i ? "rentalDivH " : "rentalDiv"}>
+                    <img className="rentalImg" src={e.attributes.imgUrl} alt='img'></img>
                     <div className="rentalInfo">
                       <div className="rentalTitle">{e.attributes.name}</div>
                       <div className="rentalDesc">

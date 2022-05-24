@@ -22,7 +22,7 @@ function User({account}) {
 
     fetchRentals();
 
-  }, [isVisible]);
+  }, [isVisible, Moralis, account]);
 
   return (
     <>
@@ -51,6 +51,7 @@ function User({account}) {
                       <img
                         width="180px"
                         src={e.attributes.imgUrl}
+                        alt='img'
                       />
                     </div>
                   </Card>
